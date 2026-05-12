@@ -1,0 +1,446 @@
+/* =========================================================
+   АДАПТИВ ПРОЕКТА
+   Файл добавляет только мобильные правила отображения.
+   Серверная логика, запросы и существующие скрипты не изменяются.
+   ========================================================= */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+button, input, select, textarea, a {
+  touch-action: manipulation;
+}
+
+.container {
+  width: min(92%, 1200px) !important;
+}
+
+/* Горизонтальный скролл для широких таблиц без ломания их структуры */
+table {
+  max-width: 100%;
+}
+
+.table-wrap,
+.table-wrapper,
+.schedule-table-wrap,
+.diary-table-wrap,
+.report-table-wrap,
+.journal-table-wrap,
+.marks-table-wrap,
+.admin-table-wrap,
+[class*="table-container"] {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 94% !important;
+  }
+
+  .header-content {
+    gap: 14px !important;
+  }
+
+  .title h1 {
+    font-size: clamp(1.15rem, 3vw, 1.5rem) !important;
+    line-height: 1.18 !important;
+  }
+
+  .title p {
+    font-size: clamp(0.78rem, 2vw, 0.95rem) !important;
+    line-height: 1.35 !important;
+  }
+
+  .menu {
+    gap: 6px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start !important;
+    padding: 8px 0 !important;
+  }
+
+  .menu > li {
+    flex: 0 0 auto !important;
+  }
+
+  .menu > li > a {
+    white-space: nowrap !important;
+  }
+
+  .accessibility-panel {
+    width: min(420px, calc(100vw - 24px)) !important;
+    right: 0 !important;
+    padding: 18px !important;
+  }
+
+  .main {
+    width: 94% !important;
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    gap: 16px !important;
+  }
+
+  .content {
+    min-width: 0 !important;
+  }
+
+  .panel,
+  .admin-hero,
+  .profile-card,
+  .section-card,
+  .news-card,
+  .info-block,
+  .contact-card,
+  .gallery-card,
+  .schedule-card,
+  .message-card,
+  .announcement-card {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    min-width: 0 !important;
+  }
+
+  .header {
+    padding: 14px 0 !important;
+  }
+
+  .header-content {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .logo img {
+    width: 64px !important;
+  }
+
+  .title {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  .header-icons {
+    width: 100% !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+
+  .user-block {
+    max-width: 100% !important;
+    text-align: left !important;
+  }
+
+  .nav {
+    margin-top: 14px !important;
+  }
+
+  .menu {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    overflow: visible !important;
+    padding: 8px !important;
+  }
+
+  .menu > li,
+  .menu > li > a {
+    width: 100% !important;
+  }
+
+  .dropdown,
+  .submenu {
+    position: static !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+    transform: none !important;
+    margin: 4px 0 6px !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    display: block !important;
+  }
+
+  .content {
+    padding: 24px 0 !important;
+  }
+
+  .section-title,
+  .page-title,
+  h1, h2 {
+    word-break: normal !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  /* Личные кабинеты: боковое меню становится верхними вкладками */
+  .main {
+    flex-direction: column !important;
+    width: 94% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .sidebar {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px !important;
+    border-radius: 16px !important;
+  }
+
+  .sidebar h3 {
+    display: none !important;
+  }
+
+  .sidebar a,
+  .sidebar button {
+    flex: 0 0 auto !important;
+    min-height: 42px !important;
+    white-space: nowrap !important;
+    padding: 10px 12px !important;
+    border-radius: 12px !important;
+    justify-content: center !important;
+  }
+
+  .sidebar a span {
+    display: inline !important;
+  }
+
+  main.content,
+  .main > .content,
+  .content-area,
+  .lk-content,
+  #adminPanelContent {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+
+  .panel,
+  .tab,
+  .tab-content,
+  .admin-hero,
+  .profile-panel,
+  .student-profile-card,
+  .teacher-profile-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .profile-grid,
+  .student-profile-grid,
+  .teacher-profile-grid,
+  .admin-grid,
+  .cards-grid,
+  .news-grid,
+  .gallery-grid,
+  .contacts-grid,
+  .info-grid,
+  .features-grid,
+  .sections-grid,
+  [class*="grid"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .diary-controls,
+  .teacher-week-controls,
+  .schedule-controls,
+  .report-controls,
+  .admin-actions,
+  .form-actions,
+  .message-actions,
+  .toolbar,
+  .filters,
+  .week-selector,
+  .schedule-week-selector {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .day-tabs,
+  .week-days,
+  .schedule-days,
+  .lesson-days,
+  .info-nav,
+  .chips,
+  .chip-row {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+  }
+
+  .day-tab,
+  .week-day,
+  .schedule-day,
+  .chip,
+  .info-nav a,
+  .info-nav button {
+    flex: 0 0 auto !important;
+  }
+
+  table {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  th, td {
+    white-space: normal !important;
+  }
+
+  .modal,
+  .modal-content,
+  .profile-modal,
+  .edit-modal,
+  .cropper-modal-content,
+  .message-modal {
+    width: min(94vw, 560px) !important;
+    max-width: 94vw !important;
+    max-height: 88vh !important;
+    overflow-y: auto !important;
+  }
+
+  .carousel,
+  .carousel-inner,
+  .slide,
+  .slide img {
+    max-width: 100% !important;
+  }
+
+  .carousel,
+  .slide img {
+    height: auto !important;
+    min-height: 220px !important;
+    object-fit: cover !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .container,
+  .main {
+    width: 94% !important;
+  }
+
+  .title h1 {
+    font-size: 1.05rem !important;
+  }
+
+  .title p {
+    font-size: 0.78rem !important;
+  }
+
+  .accessibility-panel {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    width: calc(100vw - 18px) !important;
+    max-height: 78vh !important;
+    overflow-y: auto !important;
+  }
+
+  .checkbox-group,
+  .option-group,
+  .a11y-row {
+    flex-wrap: wrap !important;
+  }
+
+  input,
+  select,
+  textarea {
+    max-width: 100% !important;
+  }
+
+  button,
+  .btn,
+  .button,
+  input[type="submit"] {
+    max-width: 100% !important;
+  }
+
+  .form-row,
+  .profile-row,
+  .teacher-profile-row,
+  .student-profile-row,
+  .admin-form-row,
+  .message-compose-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .footer-links-col,
+  .footer-contacts-col {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .footer-links a,
+  .footer-contact-list li {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .logo img {
+    width: 56px !important;
+  }
+
+  .header-icons i,
+  .login-link {
+    font-size: 1rem !important;
+  }
+
+  .sidebar a,
+  .sidebar button,
+  .menu > li > a,
+  .dropdown a,
+  .submenu a {
+    font-size: 0.9rem !important;
+  }
+
+  .panel,
+  .admin-hero,
+  .section-card,
+  .info-block,
+  .profile-card {
+    padding: 14px !important;
+  }
+
+  .week-nav-btn,
+  .schedule-edit-toggle,
+  .export-btn {
+    min-height: 40px !important;
+  }
+}
